@@ -6,7 +6,23 @@
   line-height: 1.5;
   letter-spacing: 0.00938em;
 } */
+.sideBtn:hover{
+  color: #2A7BE4;
+  transition: .3s ease-in-out all;
+}
+.sideBtn{
+  transition: .3s ease-in-out all;
+  cursor: pointer;
+}
+.MuiPaper-elevation4 {
+  box-shadow: none !important;
+}
 
-.MuiPaper-elevation4{
-  box-shadow: none!important;
+.row {
+  --bs-gutter-x: 0!important;
+}
+p{
+  
+  margin-block-start: 0!important;
+  margin-block-end: 0!important;
 }

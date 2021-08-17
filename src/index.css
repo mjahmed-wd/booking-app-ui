@@ -2,12 +2,11 @@
 body {
   margin: 0;
   background-color: #fff!important;
-  font-family: Poppins, sans-serif;
+  font-family: "Poppins"!important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: "Poppins"!important;
 }
