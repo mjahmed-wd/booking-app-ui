@@ -1,7 +1,7 @@
 import React from "react";
 import ISelect from "../../helper/_select";
 import Select from "react-select";
-import Maldivs from "./../../images/home/Rectangle 262.png"
+import Maldivs from "./../../images/home/Rectangle 262a.png"
 
 const options = [
   { value: "chocolate", label: "Chocolate" },
@@ -26,7 +26,7 @@ const Home = () => {
       <div
         style={{ backgroundColor: "#F7FBFF", borderTop: "1px solid #EBF0F6" }}
       >
-        <div className="m-3 mt-5 mb-5">
+        <div className="m-3 mt-5 mb-0">
           <div>
             <p style={{ fontSize: "25px", fontWeight: "1000" }}>
               Countries you can travel to right now
@@ -38,8 +38,8 @@ const Home = () => {
               Populer destinations open to visitors from your country
             </p>
           </div>
-          <div>
-            <img src={Maldivs} alt="" srcset="" />
+          <div className="pb-5">
+            <img src={Maldivs} alt="" />
           </div>
         </div>
       </div>
