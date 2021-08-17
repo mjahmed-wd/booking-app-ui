@@ -25,13 +25,6 @@ function App() {
       <div style={{ width: `${sidebarWidth ? "85%" : "95%"}` }}>
         <Header/>
         <Home />
-        <Home />
-        <Home />
-        <Home />
-        <Home />
-        <Home />
-        <Home />
-        <Home />
       </div>
       {/* <Sidebar>
         <Home />

@@ -1,8 +1,6 @@
-import { IconButton, MenuItem, Select, Typography } from "@material-ui/core";
+import {  MenuItem, Select} from "@material-ui/core";
 import React from "react";
-import MenuIcon from "@material-ui/icons/Menu";
 import UsFlag from "./../images/home/topbar icons/us.svg"
-import clsx from "clsx";
 import "./header.module.css";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 
@@ -10,7 +8,7 @@ const Header = () => {
   return (
     <div className="w-100 mt-3 d-flex justify-content-between">
       <div className="d-flex ms-3">
-        <h4 style={{ color: "#5D6E82" }}>Logo</h4>
+        <h4 style={{ color: "#5D6E82",fontSize: "25px",fontWeight:"1000" }}>Logo</h4>
       </div>
       <div className="d-flex justify-content-end align-items-center">
         <ul>
@@ -41,7 +39,7 @@ const Header = () => {
             <Select
               labelId="demo-simple-select-outlined-label"
               id="demo-simple-select-outlined"
-              value={UsFlag}
+              value={`hello`}
               onChange={(e) => console.log(e?.target?.value)}
             >
               <MenuItem value="english">
