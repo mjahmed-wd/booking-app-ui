@@ -6,23 +6,90 @@
   line-height: 1.5;
   letter-spacing: 0.00938em;
 } */
-.sideBtn:hover{
-  color: #2A7BE4;
-  transition: .3s ease-in-out all;
+.sideBtn:hover {
+  color: #2a7be4;
+  transition: 0.3s ease-in-out all;
 }
-.sideBtn{
-  transition: .3s ease-in-out all;
+.sideBtn {
+  transition: 0.3s ease-in-out all;
   cursor: pointer;
 }
 .MuiPaper-elevation4 {
   box-shadow: none !important;
 }
-
-.row {
-  --bs-gutter-x: 0!important;
+.carousel-item-padding-40-px li {
+  width: inherit !important;
 }
-p{
-  
-  margin-block-start: 0!important;
-  margin-block-end: 0!important;
+.row {
+  --bs-gutter-x: 0 !important;
+}
+p {
+  margin-block-start: 0 !important;
+  margin-block-end: 0 !important;
+}
+
+.w-5 {
+  width: 5% !important;
+  transition: 0.3s ease-in-out all;
+}
+.w-15 {
+  transition: 0.3s ease-in-out all;
+  width: 15% !important;
+}
+.w-85 {
+  transition: 0.3s ease-in-out all;
+  width: 85% !important;
+}
+.w-95 {
+  transition: 0.3s ease-in-out all;
+  width: 95% !important;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .d-none-mobile {
+    display: none;
+  }
+  .w-85 {
+    transition: 0.3s ease-in-out all;
+    width: 100% !important;
+  }
+  .w-95 {
+    transition: 0.3s ease-in-out all;
+    width: 100% !important;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+  .d-none-mobile {
+    display: none;
+  }
+  .w-85 {
+    transition: 0.3s ease-in-out all;
+    width: 100% !important;
+  }
+  .w-95 {
+    transition: 0.3s ease-in-out all;
+    width: 100% !important;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .d-none-mobile {
+    display: none;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .d-none-mobile {
+    display: block;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .d-none-mobile {
+    display: block;
+  }
 }
