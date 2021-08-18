@@ -7,6 +7,7 @@ import London from "./../../images/home/london.png";
 import Arab from "./../../images/home/arab.png";
 import CardImage from "../../helper/_cardImage";
 import Carousel from "react-multi-carousel";
+import DateSelect from "../../helper/_dateSelection";
 
 const options = [
   { value: "chocolate", label: "Chocolate" },
@@ -45,7 +46,7 @@ const Home = () => {
             <ISelect heading="Adult" options={["One Way", "Two Way"]} />
           </div>
         </div>
-        <Select options={options} />
+        {/* <Select options={options} /> */}
       </div>
       <div
         style={{ backgroundColor: "#F7FBFF", borderTop: "1px solid #EBF0F6" }}
@@ -67,9 +68,18 @@ const Home = () => {
                 Populer destinations open to visitors from your country
               </p>
             </div>
-            <button className="btn btn-outline-primary" style={{padding: "5px 10px", marginBottom: "25px", marginRight: "50px"}}>See All</button>
+            <button
+              className="btn btn-outline-primary"
+              style={{
+                padding: "5px 10px",
+                marginBottom: "25px",
+                marginRight: "50px",
+              }}
+            >
+              See All
+            </button>
           </div>
-
+          <DateSelect />
           <div className="pb-5">
             <Carousel
               swipeable={true}
