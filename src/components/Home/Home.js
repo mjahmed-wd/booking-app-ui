@@ -7,7 +7,7 @@ import London from "./../../images/home/london.png";
 import Arab from "./../../images/home/arab.png";
 import CardImage from "../../helper/_cardImage";
 import Carousel from "react-multi-carousel";
-import DateSelect from "../../helper/_dateSelection";
+// import DateSelect from "../../helper/_dateSelection";
 
 const options = [
   { value: "chocolate", label: "Chocolate" },
@@ -79,7 +79,7 @@ const Home = () => {
               See All
             </button>
           </div>
-          <DateSelect />
+          {/* <DateSelect /> */}
           <div className="pb-5">
             <Carousel
               swipeable={true}
