@@ -1,21 +1,36 @@
 import React from "react";
 import ISelect from "../../helper/_select";
-import Select from "react-select";
+import SwapHorizIcon from "@material-ui/icons/SwapHoriz";
 import Maldivs from "./../../images/home/Rectangle 262a.png";
 import India from "./../../images/home/india.png";
 import London from "./../../images/home/london.png";
 import Arab from "./../../images/home/arab.png";
 import CardImage from "../../helper/_cardImage";
 import Carousel from "react-multi-carousel";
-// import DateSelect from "../../helper/_dateSelection";
+import DateSelect from "../../helper/_dateSelection";
+import { Formik } from "formik";
+import { useState } from "react";
 
 const options = [
-  { value: "chocolate", label: "Chocolate" },
-  { value: "strawberry", label: "Strawberry" },
-  { value: "vanilla", label: "Vanilla" },
+  { value: "0", label: "Dhaka" },
+  { value: "1", label: "San Fransisco" },
+  { value: "2", label: "New York" },
 ];
 
 const Home = () => {
+  const weekdays=[
+    "Sun","Mon","Tue","Wed","Thu","Fri","Sat"
+  ]
+  const [fromDateAttr, setFromDateAttr] = useState("");
+  const [toDateAttr, setToDateAttr] = useState("");
+
+  const changeDateAttr = (date,setter) => {
+    const weekDay=new Date(date).getDay()
+    const day=new Date(date).getDate()
+    const month=new Date(date).getMonth()
+    // console.log(date,weekdays[weekDay])
+    setter(`${weekdays[weekDay]} ${day}/${month}`)
+  };
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -24,7 +39,7 @@ const Home = () => {
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 4,
+      items: 3,
       slidesToSlide: 1, // optional, default to 1.
     },
     mobile: {
@@ -46,6 +61,70 @@ const Home = () => {
             <ISelect heading="Adult" options={["One Way", "Two Way"]} />
           </div>
         </div>
+
+        <div className="row mt-3">
+          <div className="col-md-2">
+            <DateSelect options={options} />
+          </div>
+          <div className="col-auto ms-2 me-2 input_txt">
+            <SwapHorizIcon />
+          </div>
+          <div className="col-md-2">
+            <DateSelect options={options} />
+          </div>
+        </div>
+
+        <Formik
+          initialValues={{ email: "", date: `${new Date().getFullYear()}-${new Date().getMonth()}-${new Date().getDate}` }}
+          // validate={(values) => {
+          //   const errors = {};
+          //   if (!values.email) {
+          //     errors.email = "Required";
+          //   } else if (
+          //     !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+          //   ) {
+          //     errors.email = "Invalid email address";
+          //   }
+          //   return errors;
+          // }}
+          onSubmit={(values, { setSubmitting }) => {
+            setTimeout(() => {
+              alert(JSON.stringify(values, null, 2));
+              setSubmitting(false);
+            }, 400);
+          }}
+        >
+          {({
+            values,
+            errors,
+            touched,
+            handleChange,
+            handleBlur,
+            handleSubmit,
+            isSubmitting,
+            setFieldValue,
+            /* and other goodies */
+          }) => (
+            <>
+              <input
+                type="date"
+                name="date"
+                data-date={fromDateAttr}
+                onChange={(valueOption) => {
+                  setFieldValue("date", valueOption?.target?.value);
+                  changeDateAttr(valueOption?.target?.value,setFromDateAttr)
+                  // this.setAttribute("data-date","Wed 17/9")
+                }}
+                onBlur={handleBlur}
+                value={values.date}
+              />
+              <button type="submit" disabled={isSubmitting}>
+                Submit
+              </button>
+              {values?.date}
+            </>
+          )}
+        </Formik>
         {/* <Select options={options} /> */}
       </div>
       <div
@@ -79,7 +158,7 @@ const Home = () => {
               See All
             </button>
           </div>
-          {/* <DateSelect /> */}
+
           <div className="pb-5">
             <Carousel
               swipeable={true}

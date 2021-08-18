@@ -44,6 +44,50 @@ p {
   transition: 0.3s ease-in-out all;
   width: 95% !important;
 }
+.css-yk16xz-control {
+  background-color: #f9fafd !important;
+}
+.css-1wa3eu0-placeholder {
+  color: #344050 !important;
+}
+.input_txt,
+.css-1uccc91-singleValue {
+  padding: 2px 15px;
+  background-color: #f2f8fe;
+  border: 1px solid #b3b3b3;
+  border-radius: 5px;
+}
+.input_txt {
+  padding: 5px 15px;
+  background-color:#F9FAFD;
+  display: inline-block;
+}
+/* input field date */
+input {
+  position: relative;
+  width: 150px; height: 20px;
+  color: white;
+}
+
+input:before {
+  position: absolute;
+  top: 3px; left: 3px;
+  content: attr(data-date);
+  display: inline-block;
+  color: black;
+}
+
+input::-webkit-datetime-edit, input::-webkit-inner-spin-button, input::-webkit-clear-button {
+  display: none;
+}
+
+input::-webkit-calendar-picker-indicator {
+  position: absolute;
+  top: 3px;
+  right: 0;
+  color: black;
+  opacity: 1;
+}
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .d-none-mobile {
