@@ -1,36 +1,41 @@
 import React from "react";
-import ISelect from "../../helper/_select";
-import SwapHorizIcon from "@material-ui/icons/SwapHoriz";
+// import React, { useEffect } from "react";
+// import ISelect from "../../helper/_select";
 import Maldivs from "./../../images/home/Rectangle 262a.png";
 import India from "./../../images/home/india.png";
 import London from "./../../images/home/london.png";
 import Arab from "./../../images/home/arab.png";
 import CardImage from "../../helper/_cardImage";
 import Carousel from "react-multi-carousel";
-import DateSelect from "../../helper/_dateSelection";
-import { Formik } from "formik";
-import { useState } from "react";
+// import SelectInput from "../../helper/_dateSelection";
+// import { Formik } from "formik";
+// import { useState } from "react";
+// import SearchIcon from "@material-ui/icons/Search";
+import BookingSelection from "../BookingSelection/BookingSelection";
 
-const options = [
-  { value: "0", label: "Dhaka" },
-  { value: "1", label: "San Fransisco" },
-  { value: "2", label: "New York" },
-];
+// const options = [
+//   { value: "0", label: "Dhaka" },
+//   { value: "1", label: "San Fransisco" },
+//   { value: "2", label: "New York" },
+// ];
 
 const Home = () => {
-  const weekdays=[
-    "Sun","Mon","Tue","Wed","Thu","Fri","Sat"
-  ]
-  const [fromDateAttr, setFromDateAttr] = useState("");
-  const [toDateAttr, setToDateAttr] = useState("");
-
-  const changeDateAttr = (date,setter) => {
-    const weekDay=new Date(date).getDay()
-    const day=new Date(date).getDate()
-    const month=new Date(date).getMonth()
-    // console.log(date,weekdays[weekDay])
-    setter(`${weekdays[weekDay]} ${day}/${month}`)
-  };
+  // const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  // const [fromDateAttr, setFromDateAttr] = useState("");
+  // const [toDateAttr, setToDateAttr] = useState("");
+  // const todayDateFormat = `${new Date().getFullYear()}-${new Date().getMonth()}-${new Date().getDate()}`;
+  // const changeDateAttr = (date, setter) => {
+  //   const weekDay = new Date(date).getDay();
+  //   const day = new Date(date).getDate();
+  //   const month = new Date(date).getMonth();
+  //   // console.log(date,weekdays[weekDay])
+  //   setter(`${weekdays[weekDay]} ${day}/${month}`);
+  // };
+  // useEffect(() => {
+  //   changeDateAttr(new Date(), setFromDateAttr);
+  //   changeDateAttr(new Date(), setToDateAttr);
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -54,78 +59,7 @@ const Home = () => {
         <p style={{ fontSize: "25px", fontWeight: "1000" }}>
           Welcome, Find a flexible flight for your next trip.
         </p>
-        <div className="row">
-          <div className="d-flex mt-5 col-md-6 col-xs-12">
-            <ISelect heading="Return" options={["One Way", "Two Way"]} />
-            <ISelect heading="Economy" options={["One Way", "Two Way"]} />
-            <ISelect heading="Adult" options={["One Way", "Two Way"]} />
-          </div>
-        </div>
-
-        <div className="row mt-3">
-          <div className="col-md-2">
-            <DateSelect options={options} />
-          </div>
-          <div className="col-auto ms-2 me-2 input_txt">
-            <SwapHorizIcon />
-          </div>
-          <div className="col-md-2">
-            <DateSelect options={options} />
-          </div>
-        </div>
-
-        <Formik
-          initialValues={{ email: "", date: `${new Date().getFullYear()}-${new Date().getMonth()}-${new Date().getDate}` }}
-          // validate={(values) => {
-          //   const errors = {};
-          //   if (!values.email) {
-          //     errors.email = "Required";
-          //   } else if (
-          //     !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-          //   ) {
-          //     errors.email = "Invalid email address";
-          //   }
-          //   return errors;
-          // }}
-          onSubmit={(values, { setSubmitting }) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(false);
-            }, 400);
-          }}
-        >
-          {({
-            values,
-            errors,
-            touched,
-            handleChange,
-            handleBlur,
-            handleSubmit,
-            isSubmitting,
-            setFieldValue,
-            /* and other goodies */
-          }) => (
-            <>
-              <input
-                type="date"
-                name="date"
-                data-date={fromDateAttr}
-                onChange={(valueOption) => {
-                  setFieldValue("date", valueOption?.target?.value);
-                  changeDateAttr(valueOption?.target?.value,setFromDateAttr)
-                  // this.setAttribute("data-date","Wed 17/9")
-                }}
-                onBlur={handleBlur}
-                value={values.date}
-              />
-              <button type="submit" disabled={isSubmitting}>
-                Submit
-              </button>
-              {values?.date}
-            </>
-          )}
-        </Formik>
-        {/* <Select options={options} /> */}
+        <BookingSelection />
       </div>
       <div
         style={{ backgroundColor: "#F7FBFF", borderTop: "1px solid #EBF0F6" }}

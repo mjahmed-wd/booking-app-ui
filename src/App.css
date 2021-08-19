@@ -59,34 +59,69 @@ p {
 }
 .input_txt {
   padding: 5px 15px;
-  background-color:#F9FAFD;
+  height: 42px;
+  background-color: #f9fafd;
   display: inline-block;
 }
 /* input field date */
 input {
   position: relative;
-  width: 150px; height: 20px;
+  width: 150px;
+  height: 20px;
   color: white;
 }
 
 input:before {
   position: absolute;
-  top: 3px; left: 3px;
+  top: 3px;
+  left: 3px;
   content: attr(data-date);
   display: inline-block;
   color: black;
 }
 
-input::-webkit-datetime-edit, input::-webkit-inner-spin-button, input::-webkit-clear-button {
+input::-webkit-datetime-edit,
+input::-webkit-inner-spin-button,
+input::-webkit-clear-button {
   display: none;
 }
 
-input::-webkit-calendar-picker-indicator {
+/* input::-webkit-calendar-picker-indicator {
   position: absolute;
   top: 3px;
   right: 0;
   color: black;
   opacity: 1;
+} */
+input[type="date"] {
+  height: 42px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: #f9fafd;
+  border: 1px solid #b3b3b3;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background: transparent;
+  bottom: 0;
+  color: transparent;
+  cursor: pointer;
+  height: auto;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
+}
+
+.mobile-menu p {
+  font-size: 25px;
+  cursor: pointer;
+  color: #2c2c2c;
+}
+
+.d-only-mobile {
+  display: block;
+  transition: 0.3s ease-in-out all;
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
@@ -102,11 +137,13 @@ input::-webkit-calendar-picker-indicator {
     width: 100% !important;
   }
 }
-
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 600px) {
   .d-none-mobile {
     display: none;
+  }
+  .d-only-mobile{
+    display: block;
   }
   .w-85 {
     transition: 0.3s ease-in-out all;
@@ -129,11 +166,30 @@ input::-webkit-calendar-picker-indicator {
   .d-none-mobile {
     display: block;
   }
+  .d-only-mobile{
+    display: none;
+  }
+  .w-85 {
+    transition: 0.3s ease-in-out all;
+    width: 85% !important;
+  }
+  .w-95 {
+    transition: 0.3s ease-in-out all;
+    width: 95% !important;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
   .d-none-mobile {
     display: block;
+  }
+  .w-85 {
+    transition: 0.3s ease-in-out all;
+    width: 85% !important;
+  }
+  .w-95 {
+    transition: 0.3s ease-in-out all;
+    width: 95% !important;
   }
 }

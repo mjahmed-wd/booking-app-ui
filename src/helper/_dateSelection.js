@@ -17,14 +17,18 @@ const DropdownIndicator = (props) => {
   );
 };
 
-const DateSelect = ({options}) => {
+const SelectInput = ({ name, options, value, placeholder, min, onChange }) => {
   return (
     <Select
+      name={name}
       components={{ DropdownIndicator }}
       width="200px"
+      minDate={min}
       menuColor="red"
-      options={options}
+      onChange={onChange}
+      options={options || []}
+      value={value}
     />
   );
 };
-export default DateSelect;
+export default SelectInput;
