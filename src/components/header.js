@@ -1,14 +1,21 @@
-import {  MenuItem, Select} from "@material-ui/core";
+import { MenuItem, Select } from "@material-ui/core";
 import React from "react";
-import UsFlag from "./../images/home/topbar icons/us.svg"
+import UsFlag from "./../images/home/topbar icons/us.svg";
 import "./header.module.css";
 import FavoriteIcon from "@material-ui/icons/Favorite";
+import { useHistory } from "react-router-dom";
 
 const Header = () => {
+  const history = useHistory();
   return (
     <div className="w-100 mt-3 d-flex justify-content-between">
       <div className="d-flex ms-3">
-        <h4 style={{ color: "#5D6E82",fontSize: "25px",fontWeight:"1000" }}>Logo</h4>
+        <h4
+          style={{ color: "#5D6E82", fontSize: "25px", fontWeight: "1000" }}
+          onClick={() => history.push("/")}
+        >
+          Logo
+        </h4>
       </div>
       <div className="d-flex justify-content-end align-items-center">
         <ul>
@@ -43,7 +50,11 @@ const Header = () => {
               onChange={(e) => console.log(e?.target?.value)}
             >
               <MenuItem value="english">
-                <img src={UsFlag} alt="" style={{ height: "25px" , width: "25px" }} />
+                <img
+                  src={UsFlag}
+                  alt=""
+                  style={{ height: "25px", width: "25px" }}
+                />
               </MenuItem>
             </Select>
           </li>

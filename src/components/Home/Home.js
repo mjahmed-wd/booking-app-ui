@@ -59,7 +59,9 @@ const Home = () => {
         <p style={{ fontSize: "25px", fontWeight: "1000" }}>
           Welcome, Find a flexible flight for your next trip.
         </p>
-        <BookingSelection />
+        <div className="mt-5">
+          <BookingSelection />
+        </div>
       </div>
       <div
         style={{ backgroundColor: "#F7FBFF", borderTop: "1px solid #EBF0F6" }}
