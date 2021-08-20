@@ -32,8 +32,8 @@ const TravelCard = () => {
           Cheapest
         </span>
       </div>
-      <div className="col-9 m-2 d_grid_4">
-        <>
+      <div className="col-9">
+        <div className="m-2 d_grid_4">
           <div>
             <input type="checkbox" name="check1" id="" />
           </div>
@@ -71,7 +71,7 @@ const TravelCard = () => {
           <div>
             <b>27 hours</b>
           </div>
-        </>
+        </div>
       </div>
       <div className="col-auto p-2">
         <div type="">
