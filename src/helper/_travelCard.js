@@ -4,28 +4,6 @@ import usAirLogo from "../images/search/icn_Logo_American-Airlines.svg";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 
 const TravelCard = ({data}) => {
-  // const data = {
-  //   header: {
-  //     amount: 249,
-  //     airlines: "Qatar Airlines",
-  //   },
-  //   row: [
-  //     {
-  //       time: "01:30 - 18:30",
-  //       route: "SAW Sabiha Gokcen - SAN San Fransisco",
-  //       steps: "2 Steps",
-  //       routeCode: "DOH, SFO",
-  //       timeCount: "27 hours",
-  //     },
-  //     {
-  //       time: "01:30 - 18:30",
-  //       route: "SAW Sabiha Gokcen - SAN San Fransisco",
-  //       steps: "2 Steps",
-  //       routeCode: "DOH, SFO",
-  //       timeCount: "27 hours",
-  //     },
-  //   ],
-  // };
   return (
     <div
       className="row shadow-lg mb-5 bg-body rounded"
@@ -54,7 +32,7 @@ const TravelCard = ({data}) => {
           Cheapest
         </span>
       </div>
-      <div className="col-9">
+      <div className="col-12 col-md-9">
         {data?.row?.map((item, index) => (
           <div key={index} className="m-2 d_grid_4">
             <div>
@@ -78,7 +56,7 @@ const TravelCard = ({data}) => {
           </div>
         ))}
       </div>
-      <div className="col-auto p-2">
+      <div className="col-12 col-md-3 p-2">
         <div type="">
           <img src={Debit} alt="" srcset="" />
           <h1>$ {data?.header?.amount}</h1>

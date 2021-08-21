@@ -2,7 +2,7 @@ import React from "react";
 
 const CardImage = ({ img, title, subTitle, topText, bottomText }) => {
   return (
-    <div style={{ position: "relative" }} className="ml-2">
+    <div style={{ position: "relative" }} className="ml-2 mr-2">
       <p
         style={{
           position: "absolute",
@@ -41,7 +41,7 @@ const CardImage = ({ img, title, subTitle, topText, bottomText }) => {
           • {bottomText}
         </p>
       </div>
-      <img src={img} alt="" />
+      <img src={img} style={{ width: "100%" }} alt="" />
     </div>
   );
 };
