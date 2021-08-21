@@ -2,7 +2,6 @@ import React from "react";
 import Maldivs from "./../../images/home/Rectangle 262a.png";
 import India from "./../../images/home/india.png";
 import London from "./../../images/home/london.png";
-import Arab from "./../../images/home/arab.png";
 import CardImage from "../../helper/_cardImage";
 import Carousel from "react-multi-carousel";
 import BookingSelection from "../BookingSelection/BookingSelection";
