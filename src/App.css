@@ -21,7 +21,22 @@
 .MuiAccordionDetails-root {
   padding: 0 !important;
 }
-
+.header .css-1okebmr-indicatorSeparator {
+  display: none !important;
+}
+.sorting input{
+  margin-bottom: 15px;
+}
+.header .css-yk16xz-control,
+.header .css-1pahdxg-control {
+  width: 75px;
+}
+.header .css-yk16xz-control {
+  border: transparent !important;
+}
+.header .css-yk16xz-control {
+  background-color: transparent !important;
+}
 .sideBtn:hover {
   color: #2a7be4;
   transition: 0.3s ease-in-out all;

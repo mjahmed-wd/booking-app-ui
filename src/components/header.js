@@ -1,14 +1,14 @@
-import { MenuItem, Select } from "@material-ui/core";
 import React from "react";
 import UsFlag from "./../images/home/topbar icons/us.svg";
 import "./header.module.css";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import { useHistory } from "react-router-dom";
+import IOptions from "../helper/_options";
 
 const Header = () => {
   const history = useHistory();
   return (
-    <div className="w-100 mt-3 d-flex justify-content-between">
+    <div className="w-100 mt-3 d-flex header justify-content-between">
       <div className="d-flex ms-3">
         <h4
           style={{ color: "#5D6E82", fontSize: "25px", fontWeight: "1000" }}
@@ -42,21 +42,15 @@ const Header = () => {
             </svg>
             Logout
           </li>
+
           <li>
-            <Select
-              labelId="demo-simple-select-outlined-label"
-              id="demo-simple-select-outlined"
-              value={`hello`}
-              onChange={(e) => console.log(e?.target?.value)}
-            >
-              <MenuItem value="english">
-                <img
-                  src={UsFlag}
-                  alt=""
-                  style={{ height: "25px", width: "25px" }}
-                />
-              </MenuItem>
-            </Select>
+            <IOptions
+              variant="flag"
+              options={[
+                { value: "1", label: "US", img: UsFlag },
+                { value: "2", label: "US", img: UsFlag },
+              ]}
+            />
           </li>
         </ul>
       </div>

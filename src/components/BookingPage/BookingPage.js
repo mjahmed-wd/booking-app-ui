@@ -1,4 +1,4 @@
-import { AccordionSummary, Divider } from "@material-ui/core";
+import { Divider } from "@material-ui/core";
 import React from "react";
 import BookingSelection from "../BookingSelection/BookingSelection";
 import BookingPackages from "./BookingPackages";
@@ -15,6 +15,9 @@ import facebook from "../../images/search/Facebook.svg";
 import twitter from "../../images/search/Twitter.svg";
 import medium from "../../images/search/Medium M.svg";
 import linkedIn from "../../images/search/LinkedIn.svg";
+import IOptions from "../../helper/_options";
+import UsFlag from "../../images/home/topbar icons/us.svg";
+import AttachMoneyOutlinedIcon from "@material-ui/icons/AttachMoneyOutlined";
 
 const BookingPage = () => {
   const [onOffStatus, setOnOffStatus] = useState(false);
@@ -23,7 +26,7 @@ const BookingPage = () => {
       <div className="m-3">
         <BookingSelection />
       </div>
-      <div className="row pt-2" style={{ backgroundColor: "#F7FBFF" }}>
+      <div className="row pt-2 sorting" style={{ backgroundColor: "#F7FBFF" }}>
         <div className="col-12 col-md-3 mt-5 p-3 pt-0">
           <div className="bg-white shadow-lg mb-5 p-3 bg-body rounded">
             <b>Our advice</b>
@@ -247,11 +250,33 @@ const BookingPage = () => {
             <p>Low Fare Tips</p>
           </div>
           <div className="col-6 col-md-3">
+            <IOptions
+              variant="country"
+              options={[
+                { value: "1", label: "US", img: UsFlag },
+                { value: "2", label: "US", img: UsFlag },
+              ]}
+            />
+            <IOptions
+              variant="currency"
+              options={[
+                {
+                  value: "2",
+                  label: "US Dollar",
+                  icon: <AttachMoneyOutlinedIcon />,
+                },
+                {
+                  value: "1",
+                  label: "US Dollar",
+                  icon: <AttachMoneyOutlinedIcon />,
+                },
+              ]}
+            />
             <div className="d-flex">
-              <img src={facebook} style={{width:"50px"}} alt="" srcset="" />
-              <img src={twitter} style={{width:"50px"}} alt="" srcset="" />
-              <img src={linkedIn} style={{width:"50px"}} alt="" srcset="" />
-              <img src={medium} style={{width:"50px"}} alt="" srcset="" />
+              <img src={facebook} style={{ width: "50px" }} alt="" />
+              <img src={twitter} style={{ width: "50px" }} alt="" />
+              <img src={linkedIn} style={{ width: "50px" }} alt="" />
+              <img src={medium} style={{ width: "50px" }} alt="" />
             </div>
           </div>
         </div>

@@ -45,14 +45,7 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            {/* <Route path="*">
-              <h2>Page not found</h2>
-            </Route> */}
-            {/* <Home /> */}
           </div>
-          {/* <Sidebar>
-        <Home />
-      </Sidebar> */}
         </div>
       </Switch>
     </Router>

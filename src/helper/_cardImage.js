@@ -2,7 +2,7 @@ import React from "react";
 
 const CardImage = ({ img, title, subTitle, topText, bottomText }) => {
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{ position: "relative" }} className="ml-2">
       <p
         style={{
           position: "absolute",

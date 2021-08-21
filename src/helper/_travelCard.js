@@ -3,7 +3,29 @@ import ShareIcon from "@material-ui/icons/Share";
 import usAirLogo from "../images/search/icn_Logo_American-Airlines.svg";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 
-const TravelCard = () => {
+const TravelCard = ({data}) => {
+  // const data = {
+  //   header: {
+  //     amount: 249,
+  //     airlines: "Qatar Airlines",
+  //   },
+  //   row: [
+  //     {
+  //       time: "01:30 - 18:30",
+  //       route: "SAW Sabiha Gokcen - SAN San Fransisco",
+  //       steps: "2 Steps",
+  //       routeCode: "DOH, SFO",
+  //       timeCount: "27 hours",
+  //     },
+  //     {
+  //       time: "01:30 - 18:30",
+  //       route: "SAW Sabiha Gokcen - SAN San Fransisco",
+  //       steps: "2 Steps",
+  //       routeCode: "DOH, SFO",
+  //       timeCount: "27 hours",
+  //     },
+  //   ],
+  // };
   return (
     <div
       className="row shadow-lg mb-5 bg-body rounded"
@@ -33,52 +55,38 @@ const TravelCard = () => {
         </span>
       </div>
       <div className="col-9">
-        <div className="m-2 d_grid_4">
-          <div>
-            <input type="checkbox" name="check1" id="" />
+        {data?.row?.map((item, index) => (
+          <div key={index} className="m-2 d_grid_4">
+            <div>
+              <input type="checkbox" name="check1" id="" />
+            </div>
+            <div>
+              <img src={usAirLogo} alt="" />
+              <img src={usAirLogo} alt="" className="ms-4" />
+            </div>
+            <div className="ms-5">
+              <b>{item?.time}</b>
+              <p>{item?.route}</p>
+            </div>
+            <div>
+              <b>{item?.steps}</b>
+              <p>{item?.routeCode}</p>
+            </div>
+            <div>
+              <b>{item?.timeCount}</b>
+            </div>
           </div>
-          <div>
-            <img src={usAirLogo} alt="" />
-            <img src={usAirLogo} alt="" className="ms-4" />
-          </div>
-          <div className="ms-5">
-            <b>01:30 - 18:30</b>
-            <p>SAW Sabiha Gokcen - SAN San Fransisco</p>
-          </div>
-          <div>
-            <b>2 Steps</b>
-            <p>DOH, SFO</p>
-          </div>
-          <div>
-            <b>27 hours</b>
-          </div>
-          {/* second one */}
-          <div>
-            <input type="checkbox" name="check1" id="" />
-          </div>
-          <div>
-            <img src={usAirLogo} alt="" />
-            <img src={usAirLogo} alt="" className="ms-4" />
-          </div>
-          <div className="ms-5">
-            <b>01:30 - 18:30</b>
-            <p>SAW Sabiha Gokcen - SAN San Fransisco</p>
-          </div>
-          <div>
-            <b>2 Steps</b>
-            <p>DOH, SFO</p>
-          </div>
-          <div>
-            <b>27 hours</b>
-          </div>
-        </div>
+        ))}
       </div>
       <div className="col-auto p-2">
         <div type="">
           <img src={Debit} alt="" srcset="" />
-          <h1>$ 249</h1>
-          <p>Qatar Airways</p>
-          <button className="btn-primary ps-5 pe-5" style={{ borderRadius: "5px" }}>
+          <h1>$ {data?.header?.amount}</h1>
+          <p>{data?.header?.airlines}</p>
+          <button
+            className="btn-primary ps-5 pe-5"
+            style={{ borderRadius: "5px" }}
+          >
             View Deal
           </button>
         </div>
